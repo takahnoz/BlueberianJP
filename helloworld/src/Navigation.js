@@ -1,15 +1,28 @@
-// import './Header.css';
+import './Navigation.scss';
 
-// function Header() {
-//   return (
-//     <div className="Header_wrap">
-//       <div className="Header">
-//           <p>
-//               this is header...
-//           </p>
-//       </div>
-//     </div>
-//   );
-// }
+function Navigation() {
+  return (
+    <div className="Navigation_wrap">
+      <div className="Navigation_area">
+        <nav>
+          <ul>
+            <li>
+                <span>メニュー01</span>
+            </li>
+            <li>
+                <span>メニュー02</span>
+            </li>
+            <li>
+                <span>メニュー03</span>
+            </li>
+            <li>
+                <span>メニュー04</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  );
+}
 
-// export default Header;
+export default Navigation;

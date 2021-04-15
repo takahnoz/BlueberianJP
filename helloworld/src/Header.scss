@@ -1,4 +1,16 @@
 .Header_wrap{
+    width: 88vw;
+    margin: 0 auto;
     padding: 30px 10px;
     background-color: #d3d3d3;
+}
+
+.Header_title{
+    > .Sub_title{
+        font-size: 12px;
+    }
+    > .Main_title{
+        font-size: 18px;
+    }
+
 }

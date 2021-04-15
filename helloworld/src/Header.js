@@ -4,9 +4,10 @@ function Header() {
   return (
     <div className="Header_wrap">
       <div className="Header">
-          <p>
-              this is header...
-          </p>
+        <section className="Header_title">
+          <p className="Sub_title">Power en Beauty for you</p>
+          <h1 className="Main_title">ぶるべリアン</h1>
+        </section>
       </div>
     </div>
   );

@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
 import Header from './Header';
+import Main from './Main';
 import Footer from './Footer';
 import reportWebVitals from './reportWebVitals';
 
 const element = (
   <React.StrictMode>
-    <Header />
-    <App />
-    <Footer />
+    <div className="All_area_wrap">
+      <Header />
+      <Main />
+      <Footer />
+    </div>
   </React.StrictMode>
 )
 
