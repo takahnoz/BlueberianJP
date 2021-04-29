@@ -37,6 +37,8 @@
     ]
   },
   "devDependencies": {
+    "chart.js": "^3.2.0",
+    "react-chartjs-2": "^3.0.3",
     "sass": "^1.32.8"
   }
 }
