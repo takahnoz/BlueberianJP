@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Header from './Header';
+import Header from './header/Header.js';
 import Main from './Main';
-import Footer from './Footer';
+import Footer from './footer/Footer.js';
 import reportWebVitals from './reportWebVitals';
 
 const element = (

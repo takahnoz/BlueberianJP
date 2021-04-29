@@ -1,6 +1,6 @@
 
 import App from './App';
-import Navigation from './Navigation';
+import Navigation from './navgation/Navigation';
 import './Main.scss';
 
 function Main() {
