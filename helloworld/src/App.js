@@ -2,24 +2,6 @@ import './App.scss';
 import { Bar } from 'react-chartjs-2';
 console.log(Bar);
 
-const graphData = {
-  labels: [
-    // 軸ラベル
-    // 各ラベルを配列にすることで軸ラベルが改行されて表示される
-    ['タンパク質'],
-    ['脂質'],
-    ['炭水化物'],
-    ['食物繊維']
-  ],
-  datasets: [
-    // 表示するデータセット
-    {
-      data: [1.8, 0.1, 15.4, 5.7],
-      label: '栄養含有量',
-    },
-  ],
-};
-
 const graphData_for_vitamin = {
   labels: [
     // 軸ラベル
@@ -35,24 +17,6 @@ const graphData_for_vitamin = {
     // 表示するデータセット
     {
       data: [0.04, 0.10, 3.0, 0.6, 0.04, 0.0068],
-      label: '栄養含有量',
-    },
-  ],
-};
-
-const graphData_for_mineral = {
-  labels: [
-    // 軸ラベル
-    // 各ラベルを配列にすることで軸ラベルが改行されて表示される
-    ['タンパク質'],
-    ['脂質'],
-    ['炭水化物'],
-    ['食物繊維'],
-  ],
-  datasets: [
-    // 表示するデータセット
-    {
-      data: [1.8, 0.1, 15.4, 5.7],
       label: '栄養含有量',
     },
   ],
@@ -109,9 +73,7 @@ function App() {
               <p>リン：62mg</p>
               <p>鉄：0.7mg</p>
             </div>
-            <Bar data={graphData} />
             <Bar data={graphData_for_vitamin} />
-            <Bar data={graphData_for_mineral} />
           </div>
         </section>
         <div>
