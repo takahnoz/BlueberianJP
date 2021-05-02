@@ -25,6 +25,12 @@
   }
 }
 
+.Article_tags_wrap{
+  .Article_tags{
+    @extend ._extends_header_title_style;
+  }
+}
+
 .Article_nutrition_wrap{
   .Article_nutrition{
     @extend ._extends_header_title_style;
