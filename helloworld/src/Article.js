@@ -1,5 +1,6 @@
-import './App.scss';
-// import { Bar } from 'react-chartjs-2';
+import './Article.scss';
+import { Grid } from "gridjs";
+import "gridjs/dist/theme/mermaid.css";
 
 function App() {
   return (
