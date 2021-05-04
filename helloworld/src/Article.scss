@@ -29,6 +29,19 @@
   .Article_tags{
     @extend ._extends_header_title_style;
   }
+
+  .Article_tag_wrap{
+    display: flex;
+    align-items: flex-start;
+
+    .Article_tag{
+      padding: 10px;
+      margin: 0 5px;
+      border-radius: 15px;
+      background-color: #ddffb8;
+    }
+  }
+
 }
 
 .Article_nutrition_wrap{
