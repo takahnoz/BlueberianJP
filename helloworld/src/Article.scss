@@ -32,11 +32,12 @@
 
   .Article_tag_wrap{
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
 
     .Article_tag{
       padding: 10px;
-      margin: 0 5px;
+      margin: 5px;
       border-radius: 15px;
       background-color: #ddffb8;
     }
