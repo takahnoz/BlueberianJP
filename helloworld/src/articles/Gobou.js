@@ -8,7 +8,7 @@ import "gridjs/dist/theme/mermaid.css";
 const Article_title_context = 'ごぼう';
 const Atticle_title_discription_context = 'ゴボウ（牛蒡または牛旁、悪実、英: Burdock、学名： Arctium lappa L. ）';
 const Article_tags_context = '効果タグ一覧';
-const Article_summary_context = 'だいたいの効果一覧';
+const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
 
@@ -59,13 +59,13 @@ function Article() {
                         <h2 className="Article_summary">{Article_summary_context}</h2>
                         <p className="Article_context">
                             ・食物繊維豊富！
-              <br />
-              ・水溶性食物繊維のイヌリン、不溶性食物繊維のリグニン、セルロース
-              <br />
-              ・アミノ酸のアルギニン
-              <br />
-              ・ポリフェノールのサポニン
-            </p>
+                            <br />
+                            ・水溶性食物繊維のイヌリン、不溶性食物繊維のリグニン、セルロース
+                            <br />
+                            ・アミノ酸のアルギニン
+                            <br />
+                            ・ポリフェノールのサポニン
+                        </p>
                     </div>
 
                     {/* 栄養詳細 */}

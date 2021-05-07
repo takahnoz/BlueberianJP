@@ -6,9 +6,9 @@ import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
 const Article_title_context = 'ブルーベリー';
-const Atticle_title_discription_context = 'ゴボウ（牛蒡または牛旁、悪実、英: Burdock、学名： Arctium lappa L. ）';
+const Atticle_title_discription_context = 'ブルーベリー（英: blueberry）ツツジ科スノキ属シアノコカス節';
 const Article_tags_context = '効果タグ一覧';
-const Article_summary_context = 'だいたいの効果一覧';
+const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
 
@@ -18,9 +18,9 @@ function Article() {
     const grid = new Grid({
         columns: ['栄養', '主な効果', '補足 '],
         data: [
-            ['イヌリン', '血糖値の急上昇を抑え、脂肪の蓄積を抑える', '水溶性食物繊維'],
-            ['サポニン', '抗酸化作用、肥満予防', 'ポリフェノール'],
-            ['アルギニン', '疲労回復、免疫力向上', 'アミノ酸'],
+            ['アントシアニン', '抗酸化作用、抗炎症作用、眼精疲労回復', 'ポリフェノール'],
+            ['食物繊維', '腸内環境改善、整腸作用', ''],
+            ['ビタミンE', '抗酸化作用', 'ビタミン群'],
         ]
     });
 
@@ -47,7 +47,7 @@ function Article() {
                         <div className="Article_context">
                             <div className="Article_tag_wrap">
                                 <div className="Article_tag">美容</div>
-                                <div className="Article_tag">腸内環境改善</div>
+                                <div className="Article_tag">視機能改善作用</div>
                                 <div className="Article_tag">アンチエイジング</div>
                             </div>
                         </div>
@@ -57,14 +57,12 @@ function Article() {
                     <div className="Article_summary_wrap">
                         <h2 className="Article_summary">{Article_summary_context}</h2>
                         <p className="Article_context">
+                            ・視機能改善作用や強力な抗酸化作用のアントシアニン
+                            <br />
                             ・食物繊維豊富！
-              <br />
-              ・水溶性食物繊維のイヌリン、不溶性食物繊維のリグニン、セルロース
-              <br />
-              ・アミノ酸のアルギニン
-              <br />
-              ・ポリフェノールのサポニン
-            </p>
+                            <br />
+                            ・抗酸化作用のあるビタミンC、ビタミンE
+                        </p>
                     </div>
 
                     {/* 栄養詳細 */}
