@@ -57,7 +57,7 @@ function Article() {
                     <div className="Article_summary_wrap">
                         <h2 className="Article_summary">{Article_summary_context}</h2>
                         <p className="Article_context">
-                            ・視機能改善作用や強力な抗酸化作用のアントシアニン
+                            ・視機能改善作用や強力な抗酸化作用のアントシアニン
                             <br />
                             ・食物繊維豊富！
                             <br />
