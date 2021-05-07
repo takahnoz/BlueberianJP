@@ -1,17 +1,19 @@
 import { React, useRef, useEffect } from 'react'
 
-import './Article.scss';
+import '../Article.scss';
 
 import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
-const Article_title_context = 'ごぼう is なに？';
+const Article_title_context = 'ごぼう';
 const Atticle_title_discription_context = 'ゴボウ（牛蒡または牛旁、悪実、英: Burdock、学名： Arctium lappa L. ）';
-const Article_tags_context = 'だいたいの効果一覧';
-const Article_summary_context = 'さっくり tell me';
+const Article_tags_context = '効果タグ一覧';
+const Article_summary_context = 'だいたいの効果一覧';
+const Article_table_context = '効果まとめ';
 
 
-function App() {
+
+function Article() {
     const tableArea = useRef(null);
 
     const grid = new Grid({
@@ -68,7 +70,7 @@ function App() {
 
                     {/* 栄養詳細 */}
                     <div className="Article_nutrition_wrap">
-                        <h2 className="Article_nutrition">一覧で tell me</h2>
+                        <h2 className="Article_nutrition">{Article_table_context}</h2>
                         <p className="Article_context">
                             <div ref={tableArea} />
                         </p>
@@ -79,4 +81,4 @@ function App() {
     );
 }
 
-export default App;
+export default Article;
