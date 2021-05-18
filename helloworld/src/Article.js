@@ -7,7 +7,7 @@ import Gobou from "./articles/Gobou";
 import Blueberry from "./articles/Blueberry";
 
 
-function Articles() {
+const Articles = () => {
   return (
     <BrowserRouter>
       <Switch>

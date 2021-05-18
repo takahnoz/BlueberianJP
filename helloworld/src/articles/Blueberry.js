@@ -12,7 +12,7 @@ const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
 
-function Article() {
+const Article = () => {
     const tableArea = useRef(null);
 
     const grid = new Grid({
