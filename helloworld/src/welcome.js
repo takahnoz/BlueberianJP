@@ -9,7 +9,7 @@ const Atticle_title_discription_context = `元々自分用に"なんとなく"�
 const Article_tags_context = '効果タグ一覧';
 const Article_summary_context = 'だいたいの効果';
 
-function Article() {
+const Article = () => {
     return (
         <div className="Article_wrap">
             <div className="Article_area">
