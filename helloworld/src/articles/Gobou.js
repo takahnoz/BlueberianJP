@@ -12,14 +12,16 @@ const Article_tags_context = '効果タグ一覧';
 const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
-const my_file_name = window.location.href.split('/').pop();
-const my_food_data = FoodDataIndex['Gobou'];
-const this_food_jp = my_food_data.JpName;
-const Atticle_title_discription_context = my_food_data.TrueName;
-// 効果一覧用のListDOM取得
-const tag_list_dom = createListDomForTags(my_food_data.Effects);
+
 
 const Article = () => {
+    const my_file_name = window.location.href.split('/').pop();
+    const my_food_data = FoodDataIndex[my_file_name]
+    const this_food_jp = my_food_data.JpName;
+    const Atticle_title_discription_context = my_food_data.TrueName;
+    // 効果一覧用のListDOM取得
+    const tag_list_dom = createListDomForTags(my_food_data.Effects);
+    
     const tableArea = useRef(null);
     const grid = new Grid(
         my_food_data.tableAssets
