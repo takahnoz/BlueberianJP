@@ -3,8 +3,8 @@ import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
 import '../Article.scss';
-import 
-    { 
+import
+    {
         createListDomForTags,
         getMyPathName
      } from '../commons/functions.js';

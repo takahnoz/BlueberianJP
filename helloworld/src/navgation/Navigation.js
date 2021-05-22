@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Navigation.scss';
 
 function Navigation() {
@@ -7,16 +8,13 @@ function Navigation() {
         <nav>
           <ul>
             <li>
-                <span>メニュー01</span>
+                <Link to="/">HOME</Link>
             </li>
             <li>
-                <span>メニュー02</span>
+              <Link to="/Articles/Gobou">ごぼう</Link>
             </li>
             <li>
-                <span>メニュー03</span>
-            </li>
-            <li>
-                <span>メニュー04</span>
+              <Link to="/Articles/Blueberry">ブルーベリー</Link>
             </li>
           </ul>
         </nav>
