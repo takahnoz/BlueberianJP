@@ -1,5 +1,5 @@
 
-import Article from './Article';
+import Article from './Article.jsx';
 import Navigation from './navgation/Navigation';
 import './Main.scss';
 

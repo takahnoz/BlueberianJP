@@ -1,21 +1,20 @@
-import { React, useRef, useEffect } from 'react'
+import { React, useRef, useEffect, useState } from 'react'
 
 import '../Article.scss';
 
 import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
-const Article_title_context = 'ごぼう';
+const this_food = 'ごぼう';
 const Atticle_title_discription_context = 'ゴボウ（牛蒡または牛旁、悪実、英: Burdock、学名： Arctium lappa L. ）';
 const Article_tags_context = '効果タグ一覧';
 const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
-
-
 const Article = () => {
-    const tableArea = useRef(null);
+    // const [count, setCount] = useState(0);
 
+    const tableArea = useRef(null);
     const grid = new Grid({
         columns: ['栄養', '主な効果', '補足 '],
         data: [
@@ -26,9 +25,11 @@ const Article = () => {
     });
 
     useEffect(() => {
+        // set title this page
+        document.title = `${this_food} | ぶるベリアン`;
+        // Nutrition　Table render
         grid.render(tableArea.current);
     });
-
 
     return (
         <div className="Article_wrap">
@@ -36,7 +37,7 @@ const Article = () => {
                 <section>
                     {/* タイトル */}
                     <div className="Article_title_wrap">
-                        <h1 className="Article_title _font-bold">{Article_title_context}</h1>
+                        <h1 className="Article_title _font-bold">{this_food}</h1>
                         <p className="Article_context">
                             {Atticle_title_discription_context}
                         </p>
