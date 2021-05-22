@@ -12,16 +12,15 @@ const Article_tags_context = '効果タグ一覧';
 const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
-
-
 const Article = () => {
     const my_file_name = window.location.href.split('/').pop();
     const my_food_data = FoodDataIndex[my_file_name]
     const this_food_jp = my_food_data.JpName;
     const Atticle_title_discription_context = my_food_data.TrueName;
     // 効果一覧用のListDOM取得
+    const article_context_dom = my_food_data.description;
     const tag_list_dom = createListDomForTags(my_food_data.Effects);
-    
+    // 栄養テーブル描画
     const tableArea = useRef(null);
     const grid = new Grid(
         my_food_data.tableAssets
@@ -60,14 +59,8 @@ const Article = () => {
                     {/* 効果概要 */}
                     <div className="Article_summary_wrap">
                         <h2 className="Article_summary">{Article_summary_context}</h2>
-                        <p className="Article_context">
-                            ・食物繊維豊富！
-                            <br />
-                            ・水溶性食物繊維のイヌリン、不溶性食物繊維のリグニン、セルロース
-                            <br />
-                            ・アミノ酸のアルギニン
-                            <br />
-                            ・ポリフェノールのサポニン
+                        {/* article_context_dom内の<br>タグをエスケープさせない */}
+                        <p className="Article_context" dangerouslySetInnerHTML={{ __html: article_context_dom }}>
                         </p>
                     </div>
 

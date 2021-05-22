@@ -10,17 +10,11 @@ const Articles = () => {
   return (
   <BrowserRouter>
       <Switch>
-        {/* <Route exact path="/" component={Welcome} />
-        <Route exact path="/Gobou" component={Gobou} />
-        <Route exact path="/Blueberry" component={Blueberry} /> */}
         <Route exact path="/">
           <Welcome />
         </Route>
-        <Route path="/Gobou">
+        <Route path="/article/*">
           <Gobou />
-        </Route>
-        <Route path="/Blueberry">
-          <Blueberry />
         </Route>
       </Switch>
     </BrowserRouter>
