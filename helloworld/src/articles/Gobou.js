@@ -1,33 +1,35 @@
-import { React, useRef, useEffect, useState } from 'react'
+import { React, useRef, useEffect } from 'react'
 
 import '../Article.scss';
+import { createListDomForTags } from '../commons/functions.js';
+import { FoodDataIndex } from '../assets/dataset.json';
 
 import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
-const this_food = 'ごぼう';
-const Atticle_title_discription_context = 'ゴボウ（牛蒡または牛旁、悪実、英: Burdock、学名： Arctium lappa L. ）';
+// イミューダブル
 const Article_tags_context = '効果タグ一覧';
 const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
+const my_file_name = window.location.href.split('/').pop();
+const my_food_data = FoodDataIndex['Gobou'];
+const this_food_jp = my_food_data.JpName;
+const Atticle_title_discription_context = my_food_data.TrueName;
+// 効果一覧用のListDOM取得
+const tag_list_dom = createListDomForTags(my_food_data.Effects);
+
 const Article = () => {
-    // const [count, setCount] = useState(0);
-
     const tableArea = useRef(null);
-    const grid = new Grid({
-        columns: ['栄養', '主な効果', '補足 '],
-        data: [
-            ['イヌリン', '血糖値の急上昇を抑え、脂肪の蓄積を抑える', '水溶性食物繊維'],
-            ['サポニン', '抗酸化作用、肥満予防', 'ポリフェノール'],
-            ['アルギニン', '疲労回復、免疫力向上', 'アミノ酸'],
-        ]
-    });
+    const grid = new Grid(
+        my_food_data.tableAssets
+    );
 
+    // DOM描画が完了したタイミングで実行
     useEffect(() => {
-        // set title this page
-        document.title = `${this_food} | ぶるベリアン`;
-        // Nutrition　Table render
+        // タイトル再設定
+        document.title = `${this_food_jp} | ぶるベリアン`;
+        // 栄養テーブル描画
         grid.render(tableArea.current);
     });
 
@@ -37,7 +39,7 @@ const Article = () => {
                 <section>
                     {/* タイトル */}
                     <div className="Article_title_wrap">
-                        <h1 className="Article_title _font-bold">{this_food}</h1>
+                        <h1 className="Article_title _font-bold">{this_food_jp}</h1>
                         <p className="Article_context">
                             {Atticle_title_discription_context}
                         </p>
@@ -48,9 +50,7 @@ const Article = () => {
                         <h2 className="Article_tags">{Article_tags_context}</h2>
                         <div className="Article_context">
                             <div className="Article_tag_wrap">
-                                <div className="Article_tag">美容</div>
-                                <div className="Article_tag">腸内環境改善</div>
-                                <div className="Article_tag">アンチエイジング</div>
+                                {tag_list_dom}
                             </div>
                         </div>
                     </div>
