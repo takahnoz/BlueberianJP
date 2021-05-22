@@ -6,7 +6,6 @@ const Article_title_context = 'はじめに',
     Atticle_title_discription_context = `元々自分用に"なんとなく"栄養のことを知れるような情報ページを作ろうとしました。
                                             この情報を皆さんに共有して、少しでも健康を手に入れらたらと思い公開しました。
                                             普段の食事の片手間に「あ、この食べ物にはこんな効果があるんだな〜」と見ていただけると幸いです。`,
-     Article_tags_context = '効果タグ一覧',
      Article_summary_context = 'だいたいの効果';
 
 const Article = () => {

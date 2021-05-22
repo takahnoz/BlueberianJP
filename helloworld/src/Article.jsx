@@ -3,18 +3,19 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './Article.scss';
 import Welcome from "./welcome.jsx";
-import Gobou from "./articles/Gobou";
-import Blueberry from "./articles/Blueberry";
+import FoodTemplate from "./articles/FoodTemplate";
 
 const Articles = () => {
   return (
   <BrowserRouter>
       <Switch>
+        {/* ファイルパスがルート（完全一致）の場合 */}
         <Route exact path="/">
           <Welcome />
         </Route>
-        <Route path="/article/*">
-          <Gobou />
+        {/* ファイルパスが/Articles/*（部分一致）の場合 */}
+        <Route path="/Articles/*">
+          <FoodTemplate />
         </Route>
       </Switch>
     </BrowserRouter>

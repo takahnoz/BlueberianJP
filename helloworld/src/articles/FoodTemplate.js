@@ -1,35 +1,41 @@
 import { React, useRef, useEffect } from 'react'
-
-import '../Article.scss';
-
 import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
-const this_food = 'ブルーベリー';
-const Atticle_title_discription_context = 'ブルーベリー（英: blueberry）ツツジ科スノキ属シアノコカス節';
+import '../Article.scss';
+import 
+    { 
+        createListDomForTags,
+        getMyPathName
+     } from '../commons/functions.js';
+import { FoodDataIndex } from '../assets/dataset.json';
+
+// イミューダブル
 const Article_tags_context = '効果タグ一覧';
 const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
 const Article = () => {
+    const my_file_name = getMyPathName();
+    const my_food_data = FoodDataIndex[my_file_name]
+    const this_food_jp = my_food_data.JpName;
+    const Atticle_title_discription_context = my_food_data.TrueName;
+    // 効果一覧用のListDOM取得
+    const article_context_dom = my_food_data.description;
+    const tag_list_dom = createListDomForTags(my_food_data.Effects);
+    // 栄養テーブル描画
     const tableArea = useRef(null);
+    const grid = new Grid(
+        my_food_data.tableAssets
+    );
 
-    const grid = new Grid({
-        columns: ['栄養', '主な効果', '補足 '],
-        data: [
-            ['アントシアニン', '抗酸化作用、抗炎症作用、眼精疲労回復', 'ポリフェノール'],
-            ['食物繊維', '腸内環境改善、整腸作用', ''],
-            ['ビタミンE', '抗酸化作用', 'ビタミン群'],
-        ]
-    });
-
+    // DOM描画が完了したタイミングで実行
     useEffect(() => {
-        // set title this page
-        document.title = `${this_food} | ぶるベリアン`;
-        // Nutrition　Table render
+        // タイトル再設定
+        document.title = `${this_food_jp} | ぶるベリアン`;
+        // 栄養テーブル描画
         grid.render(tableArea.current);
     });
-
 
     return (
         <div className="Article_wrap">
@@ -37,7 +43,7 @@ const Article = () => {
                 <section>
                     {/* タイトル */}
                     <div className="Article_title_wrap">
-                        <h1 className="Article_title _font-bold">{this_food}</h1>
+                        <h1 className="Article_title _font-bold">{this_food_jp}</h1>
                         <p className="Article_context">
                             {Atticle_title_discription_context}
                         </p>
@@ -48,9 +54,7 @@ const Article = () => {
                         <h2 className="Article_tags">{Article_tags_context}</h2>
                         <div className="Article_context">
                             <div className="Article_tag_wrap">
-                                <div className="Article_tag">美容</div>
-                                <div className="Article_tag">視機能改善作用</div>
-                                <div className="Article_tag">アンチエイジング</div>
+                                {tag_list_dom}
                             </div>
                         </div>
                     </div>
@@ -58,12 +62,8 @@ const Article = () => {
                     {/* 効果概要 */}
                     <div className="Article_summary_wrap">
                         <h2 className="Article_summary">{Article_summary_context}</h2>
-                        <p className="Article_context">
-                            ・視機能改善作用や強力な抗酸化作用のアントシアニン
-                            <br />
-                            ・食物繊維豊富！
-                            <br />
-                            ・抗酸化作用のあるビタミンC、ビタミンE
+                        {/* article_context_dom内の<br>タグをエスケープさせない */}
+                        <p className="Article_context" dangerouslySetInnerHTML={{ __html: article_context_dom }}>
                         </p>
                     </div>
 
