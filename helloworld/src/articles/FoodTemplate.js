@@ -17,7 +17,7 @@ const Article_table_context = '効果まとめ';
 
 const Article = () => {
     const my_file_name = getMyPathName();
-    const my_food_data = FoodDataIndex[my_file_name]
+    const my_food_data = FoodDataIndex[my_file_name];
     const this_food_jp = my_food_data.JpName;
     const Atticle_title_discription_context = my_food_data.TrueName;
     // 効果一覧用のListDOM取得
@@ -36,6 +36,8 @@ const Article = () => {
         // 栄養テーブル描画
         grid.render(tableArea.current);
     });
+
+
 
     return (
         <div className="Article_wrap">
@@ -70,9 +72,9 @@ const Article = () => {
                     {/* 栄養詳細 */}
                     <div className="Article_nutrition_wrap">
                         <h2 className="Article_nutrition">{Article_table_context}</h2>
-                        <p className="Article_context">
+                        <div className="Article_context">
                             <div ref={tableArea} />
-                        </p>
+                        </div>
                     </div>
                 </section>
             </div>
