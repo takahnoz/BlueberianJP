@@ -4,8 +4,8 @@ import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
 import '../Article.scss';
-import { functions } from '../commons/functions.js';
-// import { hooksfunctions } from '../commons/HooksFunctions.js';
+import { functions } from '../commons/Functions.js';
+import { hooks_functions } from '../commons/HooksFunctions.js';
 import { FoodDataIndex } from '../assets/dataset.json';
 
 // イミューダブル
@@ -14,7 +14,7 @@ const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
 const Article = () => {
-    const my_url_name = functions.getMyUrlName(useLocation);
+    const my_url_name = hooks_functions.getMyUrlName(useLocation);
     const my_food_data = FoodDataIndex[my_url_name];
     const this_food_jp = my_food_data.JpName;
     const Atticle_title_discription_context = my_food_data.TrueName;
