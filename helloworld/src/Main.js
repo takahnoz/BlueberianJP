@@ -18,4 +18,5 @@ const Main = () => {
   );
 }
 
+// export to index.js
 export default Main;

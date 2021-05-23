@@ -10,3 +10,7 @@ export const getMyPathName = () =>{
     const my_file_name = window.location.href.split('/').pop();
     return my_file_name;
 }
+
+const functions = { createListDomForTags, getMyPathName };
+
+export { functions };

@@ -3,11 +3,7 @@ import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
 import '../Article.scss';
-import
-    {
-        createListDomForTags,
-        getMyPathName
-     } from '../commons/functions.js';
+import { functions } from '../commons/functions.js';
 import { FoodDataIndex } from '../assets/dataset.json';
 
 // イミューダブル
@@ -16,13 +12,13 @@ const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
 const Article = () => {
-    const my_file_name = getMyPathName();
+    const my_file_name = functions.getMyPathName();
     const my_food_data = FoodDataIndex[my_file_name];
     const this_food_jp = my_food_data.JpName;
     const Atticle_title_discription_context = my_food_data.TrueName;
     // 効果一覧用のListDOM取得
     const article_context_dom = my_food_data.description;
-    const tag_list_dom = createListDomForTags(my_food_data.Effects);
+    const tag_list_dom = functions.createListDomForTags(my_food_data.Effects);
     // 栄養テーブル描画
     const tableArea = useRef(null);
     const grid = new Grid(
