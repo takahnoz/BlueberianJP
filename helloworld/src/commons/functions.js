@@ -6,11 +6,6 @@ export const createListDomForTags = (effects_list) => {
     return tag_list_dom;
 }
 
-// export const getMyPathName = () =>{
-//     const my_file_name = window.location.href.split('/').pop();
-//     return my_file_name;
-// }
-
 const functions = { createListDomForTags };
 
 export { functions };
