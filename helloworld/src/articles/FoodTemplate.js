@@ -1,9 +1,11 @@
 import { React, useRef, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
 import '../Article.scss';
 import { functions } from '../commons/functions.js';
+// import { hooksfunctions } from '../commons/HooksFunctions.js';
 import { FoodDataIndex } from '../assets/dataset.json';
 
 // イミューダブル
@@ -12,8 +14,8 @@ const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
 const Article = () => {
-    const my_file_name = functions.getMyPathName();
-    const my_food_data = FoodDataIndex[my_file_name];
+    const my_url_name = functions.getMyUrlName(useLocation);
+    const my_food_data = FoodDataIndex[my_url_name];
     const this_food_jp = my_food_data.JpName;
     const Atticle_title_discription_context = my_food_data.TrueName;
     // 効果一覧用のListDOM取得
@@ -32,8 +34,6 @@ const Article = () => {
         // 栄養テーブル描画
         grid.render(tableArea.current);
     });
-
-
 
     return (
         <div className="Article_wrap">
