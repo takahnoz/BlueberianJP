@@ -21,23 +21,11 @@ const Article = () => {
     // 効果一覧用のListDOM取得
     const article_context_dom = my_food_data.description;
     const tag_list_dom = functions.createListDomForTags(my_food_data.Effects);
-    // 栄養テーブル描画
-    const initilizeUseRef = (myUseRef) => {
-        return myUseRef(null);    
-    }
 
-    const tableArea = initilizeUseRef(useRef);
-    
     // DOM描画が完了したタイミングで実行
     useEffect(() => {
         // タイトル再設定
         document.title = `${this_food_jp} | ぶるベリアン`;
-        // 栄養テーブル描画
-        // const grid = new Grid(
-        //     my_food_data.tableAssets
-        // );
-        // console.log(my_food_data.tableAssets);
-        // grid.render(tableArea.current);
     });
 
     return (
@@ -76,16 +64,9 @@ const Article = () => {
                         <div className="Article_context">
                             {/* <div ref={tableArea} /> */}
                             <Grid
-                                data={[
-                                    ['John', 'john@example.com'],
-                                    ['Mike', 'mike@gmail.com']
-                                ]}
-                                columns={['Name', 'Email']}
+                                columns={my_food_data.tableAssets.columns}
+                                data={my_food_data.tableAssets.data}
                                 search={true}
-                                pagination={{
-                                    enabled: true,
-                                    limit: 1,
-                                }}
                             />
                         </div>
                     </div>
