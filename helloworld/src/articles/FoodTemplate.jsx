@@ -1,6 +1,6 @@
 import { React, useRef, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
-import { Grid } from "gridjs";
+import { Grid } from "gridjs-react";
 import "gridjs/dist/theme/mermaid.css";
 
 import '../Article.scss';
@@ -22,17 +22,22 @@ const Article = () => {
     const article_context_dom = my_food_data.description;
     const tag_list_dom = functions.createListDomForTags(my_food_data.Effects);
     // 栄養テーブル描画
-    const tableArea = useRef(null);
-    const grid = new Grid(
-        my_food_data.tableAssets
-    );
+    const initilizeUseRef = (myUseRef) => {
+        return myUseRef(null);    
+    }
 
+    const tableArea = initilizeUseRef(useRef);
+    
     // DOM描画が完了したタイミングで実行
     useEffect(() => {
         // タイトル再設定
         document.title = `${this_food_jp} | ぶるベリアン`;
         // 栄養テーブル描画
-        grid.render(tableArea.current);
+        // const grid = new Grid(
+        //     my_food_data.tableAssets
+        // );
+        // console.log(my_food_data.tableAssets);
+        // grid.render(tableArea.current);
     });
 
     return (
@@ -69,7 +74,19 @@ const Article = () => {
                     <div className="Article_nutrition_wrap">
                         <h2 className="Article_nutrition">{Article_table_context}</h2>
                         <div className="Article_context">
-                            <div ref={tableArea} />
+                            {/* <div ref={tableArea} /> */}
+                            <Grid
+                                data={[
+                                    ['John', 'john@example.com'],
+                                    ['Mike', 'mike@gmail.com']
+                                ]}
+                                columns={['Name', 'Email']}
+                                search={true}
+                                pagination={{
+                                    enabled: true,
+                                    limit: 1,
+                                }}
+                            />
                         </div>
                     </div>
                 </section>

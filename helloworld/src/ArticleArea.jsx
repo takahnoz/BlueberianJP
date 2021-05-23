@@ -3,7 +3,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 
 import './Article.scss';
 import Welcome from "./welcome.jsx";
-import FoodTemplate from "./articles/FoodTemplate";
+import FoodTemplate from "./articles/FoodTemplate.jsx";
 import NotFound from "./notfound/NotFound";
 import { hooks_functions } from './commons/HooksFunctions.js';
 
