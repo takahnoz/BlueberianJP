@@ -1,5 +1,5 @@
 import { React } from 'react'
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch, /* useLocation */ } from 'react-router-dom';
 
 import './Article.scss';
 import Welcome from "./welcome.jsx";
@@ -11,9 +11,8 @@ import NotFound from "./notfound/NotFound";
 const Articles = (props) => {
   // get OK
   // const history = useHistory();
-  const location = useLocation();
-  const my_url_name = location.pathname.split("/").pop();
-  // if()
+  // const location = useLocation();
+  // const my_url_name = location.pathname.split("/").pop();
 
   return (
       <Switch>
