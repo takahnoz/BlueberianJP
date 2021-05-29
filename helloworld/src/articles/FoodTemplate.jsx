@@ -18,7 +18,6 @@ const table_title = '主な栄養一覧';
 const columns = ["栄養", "主な効果", "補足"];
 const options = {
     pagination : false,
-    selectableRows : false,
     resizableColumns : false,
     expandableRows : false,
     fixedHeader : false,
