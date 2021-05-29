@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
-import { Grid } from "gridjs-react";
-import "gridjs/dist/theme/mermaid.css";
+
+import MUIDataTable from "mui-datatables";
 
 import '../Article.scss';
 import { functions } from '../commons/Functions.js';
@@ -12,6 +12,19 @@ import { FoodDataIndex } from '../assets/dataset.json';
 const Article_tags_context = '効果タグ一覧';
 const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
+
+const columns = ["Name", "Company", "City", "State"];
+
+const data = [
+    ["Joe James", "Test Corp", "Yonkers", "NY"],
+    ["John Walsh", "Test Corp", "Hartford", "CT"],
+    ["Bob Herm", "Test Corp", "Tampa", "FL"],
+    ["James Houston", "Test Corp", "Dallas", "TX"],
+];
+
+const options = {
+    // filterType: 'checkbox',
+};
 
 const Article = () => {
     const my_url_name = hooks_functions.getMyUrlName(useLocation);
@@ -63,10 +76,11 @@ const Article = () => {
                         <h2 className="Article_nutrition">{Article_table_context}</h2>
                         <div className="Article_context">
                             {/* <div ref={tableArea} /> */}
-                            <Grid
-                                columns={my_food_data.tableAssets.columns}
-                                data={my_food_data.tableAssets.data}
-                                search={true}
+                            <MUIDataTable
+                                title={"Employee List"}
+                                data={data}
+                                columns={columns}
+                                options={options}
                             />
                         </div>
                     </div>
