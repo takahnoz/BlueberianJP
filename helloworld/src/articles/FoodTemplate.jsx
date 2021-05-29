@@ -13,17 +13,20 @@ const Article_tags_context = '効果タグ一覧';
 const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
-const columns = ["Name", "Company", "City", "State"];
-
-const data = [
-    ["Joe James", "Test Corp", "Yonkers", "NY"],
-    ["John Walsh", "Test Corp", "Hartford", "CT"],
-    ["Bob Herm", "Test Corp", "Tampa", "FL"],
-    ["James Houston", "Test Corp", "Dallas", "TX"],
-];
-
+// MUI-Datatables Options
+const columns = ["栄養", "主な効果", "補足"];
 const options = {
-    // filterType: 'checkbox',
+    pagination : false,
+    selectableRows : false,
+    resizableColumns : false,
+    expandableRows : false,
+    fixedHeader : false,
+    sort : false,
+    filter : false,
+    search : false,
+    print : false,
+    download : false,
+    viewColumns : false
 };
 
 const Article = () => {
@@ -77,8 +80,8 @@ const Article = () => {
                         <div className="Article_context">
                             {/* <div ref={tableArea} /> */}
                             <MUIDataTable
-                                title={"Employee List"}
-                                data={data}
+                                title={"主な栄養一覧"}
+                                data={my_food_data.tableAssets.data}
                                 columns={columns}
                                 options={options}
                             />
