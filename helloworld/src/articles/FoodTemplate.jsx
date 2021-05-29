@@ -19,6 +19,7 @@ const columns = ["栄養", "主な効果", "補足"];
 const options = {
     pagination : false,
     resizableColumns : false,
+    selectableRows : 'none',
     expandableRows : false,
     fixedHeader : false,
     sort : false,
