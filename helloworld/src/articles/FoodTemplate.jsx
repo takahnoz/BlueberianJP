@@ -14,6 +14,7 @@ const Article_summary_context = 'だいたいの効果';
 const Article_table_context = '効果まとめ';
 
 // MUI-Datatables Options
+const table_title = '主な栄養一覧';
 const columns = ["栄養", "主な効果", "補足"];
 const options = {
     pagination : false,
@@ -80,9 +81,9 @@ const Article = () => {
                         <div className="Article_context">
                             {/* <div ref={tableArea} /> */}
                             <MUIDataTable
-                                title={"主な栄養一覧"}
-                                data={my_food_data.tableAssets.data}
+                                title={table_title}
                                 columns={columns}
+                                data={my_food_data.tableAssets.data}
                                 options={options}
                             />
                         </div>
