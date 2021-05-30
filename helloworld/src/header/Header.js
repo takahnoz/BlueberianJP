@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import './Header.scss';
 
 const sub_title = 'なんとなく食べ物を理解する';
@@ -20,9 +21,7 @@ const Header = (props) => {
       </div>
       <div className="Search_area">
         <form>
-          <textarea className='Search_form' placeholder={init_desc} onChange={(e)=>setDesc(e.target.value)}>
-            
-          </textarea>
+          <textarea className='Search_form' placeholder={init_desc} onChange={(e)=>setDesc(e.target.value)} />
         </form>
       </div>
       <div>
