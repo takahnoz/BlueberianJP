@@ -12,30 +12,6 @@ const Articles = (props) => {
   // const history = useHistory();
   const my_url_name = hooks_functions.getMyUrlName(useLocation);
 
-  // const SwitchRenderArticles = () =>{
-  //   if(functions.hasMyUrlNameInDatasets(my_url_name)){
-  //     return(
-  //       <Switch>
-  //         < Route exact path="/" >
-  //           <Welcome />
-  //         </Route >
-  //         < Route path="/Articles/*" >
-  //           <FoodTemplate />
-  //         </Route >
-  //       </Switch>
-  //     );
-  //   }
-  //   else{
-  //     return (
-  //       <Switch>
-  //         <Route>
-  //           <NotFound />
-  //         </Route>
-  //       </Switch>
-  //     );
-  //   }
-  // }
-
   return (
     <Switch>
       < Route exact path="/" >

@@ -35,7 +35,6 @@ const Article = () => {
     const my_food_data = FoodDataIndex[my_url_name];
     const this_food_jp = my_food_data.JpName;
     const Atticle_title_discription_context = my_food_data.TrueName;
-    // 効果一覧用のListDOM取得
     const article_context_dom = my_food_data.description;
     const tag_list_dom = functions.createListDomForTags(my_food_data.Effects);
 
