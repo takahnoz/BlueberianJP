@@ -16,10 +16,16 @@
 }
 
 .Search_area{
-    width: 100px;
+    display: flex;
+    float: right;
+    width: 300px;
     margin: 0 10px;
     background-color: #fff;
     .Search_form{
         background-color: #fff;
+        width: 260px;
+    }
+    .Search_submit{
+        width: 40px;
     }
 }
