@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { Route, Switch, /* useLocation */ } from 'react-router-dom';
 
-import './Searchs.scss';
+import './Search.scss';
 
 const Search = (props) => {
     return(

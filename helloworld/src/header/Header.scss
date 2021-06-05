@@ -18,12 +18,14 @@
 .Search_area{
     display: flex;
     float: right;
-    width: 300px;
+    width: 320px;
     margin: 0 10px;
     background-color: #fff;
     .Search_form{
         background-color: #fff;
-        width: 260px;
+        width: 280px;
+        line-height: 33px;
+        height: 33px;
     }
     .Search_submit{
         width: 40px;
