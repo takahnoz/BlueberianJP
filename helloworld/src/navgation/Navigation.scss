@@ -1,4 +1,9 @@
 .Navigation_wrap{
+    display: flex;
+    flex-flow: column;
     padding: 30px;
     width: 35%;
+    .Search_area{
+        width: 100%;
+    }
 }
