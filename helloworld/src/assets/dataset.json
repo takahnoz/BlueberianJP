@@ -3,6 +3,7 @@
         "Gobou": {
             "JpName": "ごぼう",
             "TrueName": "ゴボウ（牛蒡または牛旁、悪実、英: Burdock、学名： Arctium lappa L. ）",
+            "Url": "/Articles/Gobou",
             "Effects": [
                 "美容",
                 "腸内環境改善",
@@ -32,6 +33,7 @@
         "Blueberry": {
             "JpName": "ブルーベリー",
             "TrueName": "ブルーベリー（英: blueberry）ツツジ科スノキ属シアノコカス節",
+            "Url": "/Articles/Blueberry",
             "Effects": [
                 "美容",
                 "視機能改善作用",
