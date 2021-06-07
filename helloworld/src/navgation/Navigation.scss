@@ -6,4 +6,18 @@
     .Search_area{
         width: 100%;
     }
+    .Navigation_area{
+        .List:hover{
+            background-color: #ddffb8;
+            color: #696969;
+        }
+        .Home_list{
+            padding: 5px;
+            margin: 20px 0;
+        }
+        .Food_list{
+            padding: 5px;
+            margin: 0;
+        }
+    }
 }

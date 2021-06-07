@@ -8,12 +8,24 @@ const Navigation = () => {
   const [food_word, setFoodWord] = useState();
   console.log(`input word is ${food_word}`);
 
-  const FoodlistDom = (food_name) => {
+  const ToHomeDom = () =>{
+    return(
+      <Link to="/">
+        <li className="List Home_list" key="home">
+          HOME
+        </li>
+      </Link>
+    )
+  }
+
+  const FoodListDom = (food_name) => {
       return(
         Object.keys(FoodDataIndex).map((key) =>
-          <li className="List" key={key}>
-            <Link to={FoodDataIndex[key]["Url"]}>{FoodDataIndex[key]["JpName"]}</Link>
-          </li>
+          <Link to={FoodDataIndex[key]["Url"]} key={key}>
+            <li className="List Food_list" >
+              {FoodDataIndex[key]["JpName"]}
+            </li>
+          </Link>
         )
       )
   }
@@ -26,7 +38,8 @@ const Navigation = () => {
       <div className="Navigation_area">
         <nav className="Navin_menu">
           <ul className="Ul_list">
-            <FoodlistDom />
+            <ToHomeDom />
+            <FoodListDom />
           </ul>
         </nav>
       </div>
