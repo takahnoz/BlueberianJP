@@ -7,16 +7,18 @@
         width: 100%;
     }
     .Navigation_area{
+        .List{
+            padding: 5px 8px;
+        }
         .List:hover{
             background-color: #ddffb8;
             color: #696969;
+            border-radius: 8px;
         }
         .Home_list{
-            padding: 5px;
             margin: 20px 0;
         }
         .Food_list{
-            padding: 5px;
             margin: 0;
         }
     }
