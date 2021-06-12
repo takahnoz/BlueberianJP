@@ -14,14 +14,14 @@ const Navigation = () => {
     setFoodWord(inputWord);
     console.log(food_word);
     Object.keys(FoodDataIndex).forEach((key, index) => {
-      if (FoodDataIndex[key].JpName == inputWord){
-        console.log('collected...');
-        console.log({[key]: FoodDataIndex[key]});
+      // 入力フォームが記入なしなら全てのFoodIndexを表示する
+      if (inputWord == ''){
+        setFoodDataIndex(FoodDataIndex);
+      }
+      // 検索ワードと合致するFoodIndexがあればそれだけにフィルターする
+      else if (FoodDataIndex[key].JpName.indexOf(inputWord) > -1){
         collect_foods.push({ [key]: FoodDataIndex[key] });
         setFoodDataIndex(collect_foods[0]);
-      }
-      else if (inputWord == ''){
-        setFoodDataIndex(FoodDataIndex);
       }
     });
   }
