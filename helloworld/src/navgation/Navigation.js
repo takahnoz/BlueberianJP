@@ -19,7 +19,7 @@ const Navigation = () => {
         setFoodDataIndex(FoodDataIndex);
       }
       // 検索ワードと合致するFoodIndexがあればそれだけにフィルターする
-      else if (FoodDataIndex[key].JpName.indexOf(inputWord) > -1){
+      else if ((FoodDataIndex[key].JpName.indexOf(inputWord) > -1) || (key.toLowerCase().indexOf(inputWord) > -1)){
         collect_foods.push({ [key]: FoodDataIndex[key] });
         setFoodDataIndex(collect_foods[0]);
       }
