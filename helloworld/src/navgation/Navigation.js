@@ -26,17 +26,6 @@ const Navigation = () => {
     });
   }
 
-  // Dom for To Home
-  const ToHomeDom = () =>{
-    return(
-      <Link to="/">
-        <li className="List Home_list" key="home">
-          HOME
-        </li>
-      </Link>
-    )
-  }
-
   return (
     <div className="Navigation_wrap">
       <div className="Search_area">
@@ -48,7 +37,11 @@ const Navigation = () => {
       <div className="Navigation_area">
         <nav className="Navin_menu">
           <ul className="Ul_list">
-            <ToHomeDom />
+            <Link to="/">
+              <li className="List Home_list" key="home">
+                HOME
+              </li>
+            </Link>
             {
               Object.keys(foodDataIndex).map((key) =>
                 <Link to={foodDataIndex[key]["Url"]} key={key}>
