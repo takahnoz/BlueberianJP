@@ -5,12 +5,25 @@ import { FoodDataIndex } from '../assets/dataset.json';
 
 const Navigation = () => {
   const init_desc = '調べたい食べ物を入力してくやさい。';
-  const [food_word, setFoodWord] = useState();
+  const collect_foods = [];
+  const [food_word, setFoodWord] = useState('');
+  const [foodDataIndex, setFoodDataIndex] = useState(FoodDataIndex);
   
-  const filterFoodDataIndex = (inputWord) =>{
+  const filterFoodDataIndex = (inputWord, FoodDataIndex) =>{
     // ↓setFoodWord()によってfood_wordが更新
-    setFoodWord(inputWord)
-    console.log(`input word is ${food_word}`);
+    setFoodWord(inputWord);
+    console.log(food_word);
+    Object.keys(FoodDataIndex).forEach((key, index) => {
+      if (FoodDataIndex[key].JpName == inputWord){
+        console.log('collected...');
+        console.log({[key]: FoodDataIndex[key]});
+        collect_foods.push({ [key]: FoodDataIndex[key] });
+        setFoodDataIndex(collect_foods[0]);
+      }
+      else if (inputWord == ''){
+        setFoodDataIndex(FoodDataIndex);
+      }
+    });
   }
 
   // Dom for To Home
@@ -24,31 +37,27 @@ const Navigation = () => {
     )
   }
 
-  // Dom for Food List
-  const FoodListDom = (props) => {
-    const myFoodDataIndex = props.food_datasets;
-      return(
-        Object.keys(myFoodDataIndex).map((key) =>
-          <Link to={myFoodDataIndex[key]["Url"]} key={key}>
-            <li className="List Food_list" >
-              {myFoodDataIndex[key]["JpName"]}
-            </li>
-          </Link>
-        )
-      )
-  }
-
   return (
     <div className="Navigation_wrap">
       <div className="Search_area">
         {/* <textarea className='Search_form' placeholder={init_desc} onChange={(e) => setFoodWord(e.target.value)} /> */}
-        <textarea className='Search_form' placeholder={init_desc} onChange={(e) => filterFoodDataIndex(e.target.value)} />
+        <textarea className='Search_form' placeholder={init_desc} onChange={
+          (e) => filterFoodDataIndex(e.target.value, FoodDataIndex)
+        } />
       </div>
       <div className="Navigation_area">
         <nav className="Navin_menu">
           <ul className="Ul_list">
             <ToHomeDom />
-            <FoodListDom food_datasets={FoodDataIndex} />
+            {
+              Object.keys(foodDataIndex).map((key) =>
+                <Link to={foodDataIndex[key]["Url"]} key={key}>
+                  <li className="List Food_list" >
+                    {foodDataIndex[key]["JpName"]}
+                  </li>
+                </Link>
+                )
+            }
           </ul>
         </nav>
       </div>
