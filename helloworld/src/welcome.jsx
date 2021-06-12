@@ -1,4 +1,4 @@
-import { React } from 'react'
+import { React, useEffect } from 'react'
 
 import './Article.scss';
 
@@ -9,6 +9,12 @@ const Article_title_context = 'はじめに',
      Article_summary_context = 'だいたいの効果';
 
 const Article = () => {
+    // DOM描画が完了したタイミングで実行
+    useEffect(() => {
+        // タイトル再設定
+        document.title = `HOME | ぶるベリアン`;
+    });
+
     return (
         <div className="Article_wrap">
             <div className="Article_area">
