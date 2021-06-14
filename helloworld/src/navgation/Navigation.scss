@@ -4,7 +4,34 @@
     padding: 30px;
     width: 35%;
     .Search_area{
+        display: flex;
+        background-color: #fff;
         width: 100%;
+        margin: 40px 3%;
+        &input[type='text'] {
+            width: 100%;
+            padding: 0.3em;
+            box-sizing: border-box;
+            transition: 0.3s;
+            letter-spacing: 1px;
+            color: #aaaaaa;
+            border: none;
+            border-bottom: 2px solid #1b2538;
+            background: transparent;
+        }
+        .ef{
+            width: 100%;
+            & input[type='text']:focus {
+                border-bottom: 3px solid #ddffb8;
+                outline: none;
+            }
+        }
+        .Search_form{
+            width: 100%;
+            background-color: #fff;
+            line-height: 33px;
+            height: 33px;
+        }
     }
     .Navigation_area{
         .List{

@@ -8,7 +8,7 @@ const Navigation = () => {
   const collect_foods = [];
   const [food_word, setFoodWord] = useState('');
   const [foodDataIndex, setFoodDataIndex] = useState(FoodDataIndex);
-  
+
   const filterFoodDataIndex = (inputWord, FoodDataIndex) =>{
     // ↓setFoodWord()によってfood_wordが更新
     setFoodWord(inputWord);
@@ -28,11 +28,17 @@ const Navigation = () => {
 
   return (
     <div className="Navigation_wrap">
-      <div className="Search_area">
-        {/* <textarea className='Search_form' placeholder={init_desc} onChange={(e) => setFoodWord(e.target.value)} /> */}
+      {/* <div className="Search_area">
         <textarea className='Search_form' placeholder={init_desc} onChange={
           (e) => filterFoodDataIndex(e.target.value, FoodDataIndex)
         } />
+      </div> */}
+      <div className="Search_area">
+        <label class="ef">
+          <input className='Search_form' type="text" placeholder={init_desc} onChange={
+            (e) => filterFoodDataIndex(e.target.value, FoodDataIndex)
+          } />
+        </label>
       </div>
       <div className="Navigation_area">
         <nav className="Navin_menu">
