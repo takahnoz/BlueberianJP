@@ -14,7 +14,7 @@
             box-sizing: border-box;
             transition: 0.3s;
             letter-spacing: 1px;
-            color: #aaaaaa;
+            color: #696969;
             border: none;
             border-bottom: 2px solid #1b2538;
             background: transparent;
@@ -29,8 +29,12 @@
         .Search_form{
             width: 100%;
             background-color: #fff;
+            color: #000;
             line-height: 33px;
             height: 33px;
+            &::placeholder{
+                color: #696969;
+            }
         }
     }
     .Navigation_area{

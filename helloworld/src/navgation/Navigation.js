@@ -12,7 +12,7 @@ const Navigation = () => {
   const filterFoodDataIndex = (inputWord, FoodDataIndex) =>{
     // ↓setFoodWord()によってfood_wordが更新
     setFoodWord(inputWord);
-    console.log(food_word);
+    // console.log(food_word);
     Object.keys(FoodDataIndex).forEach((key, index) => {
       // 入力フォームが記入なしなら全てのFoodIndexを表示する
       if (inputWord == ''){
@@ -28,11 +28,6 @@ const Navigation = () => {
 
   return (
     <div className="Navigation_wrap">
-      {/* <div className="Search_area">
-        <textarea className='Search_form' placeholder={init_desc} onChange={
-          (e) => filterFoodDataIndex(e.target.value, FoodDataIndex)
-        } />
-      </div> */}
       <div className="Search_area">
         <label class="ef">
           <input className='Search_form' type="text" placeholder={init_desc} onChange={
