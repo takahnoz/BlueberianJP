@@ -17,7 +17,7 @@ const Header = (props) => {
       </div>
       <div className="Icon_area">
         {/* public配下への参照方法 */}
-        <img src={icon_path}></img>
+        <img src={icon_path} alt="header icon"></img>
       </div>
     </div>
   );

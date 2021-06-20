@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navigation.scss';
 import { FoodDataIndex } from '../assets/dataset.json';
 
 const Navigation = () => {
   const placeholder = '食べ物を入力してくやさい。';
   const collect_foods = [];
-  const [food_word, setFoodWord] = useState('');
   const [foodDataIndex, setFoodDataIndex] = useState(FoodDataIndex);
 
   const filterFoodDataIndex = (inputWord, FoodDataIndex) =>{
-    // ↓setFoodWord()によってfood_wordが更新
-    setFoodWord(inputWord);
-    // console.log(food_word);
     Object.keys(FoodDataIndex).forEach((key, index) => {
       // 入力フォームが記入なしなら全てのFoodIndexを表示する
-      if (inputWord == ''){
+      if (inputWord === ''){
         setFoodDataIndex(FoodDataIndex);
       }
       // 検索ワードと合致するFoodIndexがあればそれだけにフィルターする
@@ -29,7 +25,7 @@ const Navigation = () => {
   return (
     <div className="Navigation_wrap">
       <div className="Search_area">
-        <label class="ef">
+        <label className="ef">
           <input className='Search_form' type="text" placeholder={placeholder} onChange={
             (e) => filterFoodDataIndex(e.target.value, FoodDataIndex)
           } />

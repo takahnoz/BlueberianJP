@@ -1,6 +1,6 @@
 import { HashRouter, Route } from "react-router-dom";
-import Welcome from "./welcome.jsx";
-import Article from './Article.jsx';
+import Welcome from "./welcome.js";
+import Article from './Article.js';
 import Navigation from './navgation/Navigation';
 import './Main.scss';
 
