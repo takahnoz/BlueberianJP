@@ -40,6 +40,7 @@
     .Navigation_area{
         .List{
             padding: 5px 8px;
+            margin : 5px 0;
         }
         .List:hover{
             background-color: #a6ff5d;
@@ -47,10 +48,10 @@
             border-radius: 8px;
         }
         .Home_list{
-            margin: 0;
+            // margin: 0;
         }
         .Food_list{
-            margin: 0;
+            // margin: 0;
         }
         .Border_line_grey{
             margin: 10px 0;
