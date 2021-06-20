@@ -35,7 +35,7 @@ const Navigation = () => {
         <nav className="Navin_menu">
           <ul className="Ul_list">
             <Link to="/">
-              <li className="List Home_list" key="home">
+              <li className="List" key="home">
                 HOME
               </li>
             </Link>
@@ -43,7 +43,7 @@ const Navigation = () => {
             {
               Object.keys(foodDataIndex).map((key) =>
                 <Link to={foodDataIndex[key]["Url"]} key={key}>
-                  <li className="List Food_list" >
+                  <li className="List" >
                     {foodDataIndex[key]["JpName"]}
                   </li>
                 </Link>
