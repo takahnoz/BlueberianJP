@@ -4,7 +4,7 @@ import './Navigation.scss';
 import { FoodDataIndex } from '../assets/dataset.json';
 
 const Navigation = () => {
-  const init_desc = '調べたい食べ物を入力してくやさい。';
+  const placeholder = '食べ物を入力してくやさい。';
   const collect_foods = [];
   const [food_word, setFoodWord] = useState('');
   const [foodDataIndex, setFoodDataIndex] = useState(FoodDataIndex);
@@ -30,7 +30,7 @@ const Navigation = () => {
     <div className="Navigation_wrap">
       <div className="Search_area">
         <label class="ef">
-          <input className='Search_form' type="text" placeholder={init_desc} onChange={
+          <input className='Search_form' type="text" placeholder={placeholder} onChange={
             (e) => filterFoodDataIndex(e.target.value, FoodDataIndex)
           } />
         </label>
