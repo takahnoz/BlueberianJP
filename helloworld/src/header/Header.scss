@@ -4,13 +4,19 @@
     margin: 0 auto;
     padding: 30px 10px;
     background-color: #d3d3d3;
+    color: #333333;
+
+    .Header_title{
+        .Sub_title{
+            font-size: 12px;
+        }
+        .Main_title{
+            font-size: 18px;
+        }
+    }
+
+    .Icon_area{
+        margin: 0 5px;
+    }
 }
 
-.Header_title{
-    > .Sub_title{
-        font-size: 12px;
-    }
-    > .Main_title{
-        font-size: 18px;
-    }
-}

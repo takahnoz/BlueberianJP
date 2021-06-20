@@ -3,7 +3,7 @@ import './Header.scss';
 
 const sub_title = 'なんとなく食べ物を理解する';
 const main_title = 'ぶるベリアン(仮)';
-
+const icon_path = 'images/icon_strawberry.png';
 
 const Header = (props) => {
   
@@ -14,6 +14,10 @@ const Header = (props) => {
           <p className="Sub_title">{sub_title}</p>
           <h1 className="Main_title">{main_title}</h1>
         </section>
+      </div>
+      <div className="Icon_area">
+        {/* public配下への参照方法 */}
+        <img src={`${process.env.PUBLIC_URL}/${icon_path}`}></img>
       </div>
     </div>
   );

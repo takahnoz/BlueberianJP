@@ -50,7 +50,7 @@ const Navigation = () => {
                     {foodDataIndex[key]["JpName"]}
                   </li>
                 </Link>
-                )
+              )
             }
           </ul>
         </nav>
