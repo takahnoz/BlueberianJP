@@ -1,9 +1,10 @@
 import React from 'react';
 import './Header.scss';
+import icon_path from '../assets/images/icon_strawberry.png';
 
 const sub_title = 'なんとなく食べ物を理解する';
 const main_title = 'ぶるベリアン(仮)';
-const icon_path = 'images/icon_strawberry.png';
+// const icon_path = 'images/icon_strawberry.png';
 
 const Header = (props) => {
   
@@ -17,7 +18,7 @@ const Header = (props) => {
       </div>
       <div className="Icon_area">
         {/* public配下への参照方法 */}
-        <img src={`${process.env.PUBLIC_URL}/${icon_path}`}></img>
+        <img src={icon_path}></img>
       </div>
     </div>
   );
