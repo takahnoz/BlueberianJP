@@ -4,7 +4,6 @@ import icon_path from '../assets/images/icon_strawberry.png';
 
 const sub_title = 'なんとなく食べ物を理解する';
 const main_title = 'ぶるベリアン(仮)';
-// const icon_path = 'images/icon_strawberry.png';
 
 const Header = (props) => {
   

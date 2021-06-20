@@ -43,6 +43,7 @@ const Navigation = () => {
                 HOME
               </li>
             </Link>
+            <div className="Border_line_grey"></div>
             {
               Object.keys(foodDataIndex).map((key) =>
                 <Link to={foodDataIndex[key]["Url"]} key={key}>
