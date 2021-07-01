@@ -35,13 +35,18 @@
     flex-wrap: wrap;
     align-items: flex-start;
 
-    .Article_tag{
-      padding: 10px;
+    .Article_tag_area{
       margin: 5px;
-      border-radius: 8px;
-      background-color: #a6ff5d;
-      color: #333333;
+
+      .Article_tag{
+        padding: 10px;
+        // margin: 5px;
+        border-radius: 8px;
+        background-color: #a6ff5d;
+        color: #333333;
+      }
     }
+
   }
 
 }

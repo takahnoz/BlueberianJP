@@ -16,12 +16,8 @@ const Articles = (props) => {
 
   return (
       <Switch>
-        {/* ファイルパスがルート（完全一致）の場合 */}
-        <Route exact path="/">
-          <Welcome />
-        </Route>
         {/* ファイルパスが/Articles/*（部分一致）の場合 */}
-        <Route path="/Articles/*">
+        <Route path="/Articles/">
           <FoodTemplate />
         </Route>
         <Route>

@@ -12,6 +12,7 @@ const Main = () => {
           <Navigation />
           <Route exact path="/" component={Welcome} />
           <Route path="/Articles/" component={Article} />
+          {/* <Route path="/Articles/" component={Article} /> */}
         </HashRouter>
       </div>
     </div>
