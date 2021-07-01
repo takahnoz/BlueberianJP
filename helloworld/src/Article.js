@@ -2,7 +2,6 @@ import { React } from 'react'
 import { Route, Switch, /* useLocation */ } from 'react-router-dom';
 
 import './Article.scss';
-import Welcome from "./welcome.js";
 import FoodTemplate from "./articles/FoodTemplate";
 import NotFound from "./notfound/NotFound";
 // import { FoodDataIndex } from '../assets/dataset.json';
